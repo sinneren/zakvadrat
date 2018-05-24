@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%
+var data = {
+    title: 'Главная',
+};
+var header = {
+    logo: 'logo-big.svg',
+    badge_class: 'badge-primary text-light'
+};
+%>
+<%= _.template(require('./../includes/head.html'))(data) %>
+<body>
+<header class="header">
+    <%= _.template(require('./../includes/header-mobile.html'))() %>
+    <div class="collapse navbar-collapse d-md-block" id="navbarToggler">
+        <%= _.template(require('./../includes/toolbar.html'))(header) %>
+        <%= _.template(require('./../includes/header.html'))(header) %>
+        <%= _.template(require('./../includes/navbar.html'))() %>
+    </div>
+</header>
+<div class="wrapper">
+    <%= _.template(require('./../includes/search.html'))() %>
+    <div class="search-links">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <%= _.template(require('./../includes/search-links.html'))() %>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <%= _.template(require('./../includes/search-links.html'))() %>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <%= _.template(require('./../includes/search-links.html'))() %>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <%= _.template(require('./../includes/search-links.html'))() %>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <%= _.template(require('./../includes/search-links.html'))() %>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <%= _.template(require('./../includes/search-links.html'))() %>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <%= _.template(require('./../includes/search-links.html'))() %>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <%= _.template(require('./../includes/search-links.html'))() %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="testimonial">
+        <div class="container">
+            <h2>Real estate CRM</h2>
+            <div class="row">
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="text-center">
+                            <svg role="img" width="120" height="120" fill="#FE744E">
+                                <use xlink:href="/img/testimonials-sprite.svg#01"></use>
+                            </svg>
+                        </div>
+                        <div class="h5 text-center">Хотите стать риэлтором?</div>
+                        <div class="testimonial__text">
+                            Watching the news the other day, it occurred to me that people who have “words to live by” often begin to attack and even
+                            kill others. I thought back to my own angry youth, when I could easily use words to justify violent…
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="text-center">
+                            <svg role="img" width="120" height="120" fill="#FE744E">
+                                <use xlink:href="/img/testimonials-sprite.svg#02"></use>
+                            </svg>
+                        </div>
+                        <div class="h5 text-center">Хотите стать риэлтором?</div>
+                        <div class="testimonial__text">
+                            Watching the news the other day, it occurred to me that people who have “words to live by” often begin to attack and even
+                            kill others. I thought back to my own angry youth, when I could easily use words to justify violent…
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="text-center">
+                            <svg role="img" width="120" height="120" fill="#FE744E">
+                                <use xlink:href="/img/testimonials-sprite.svg#03"></use>
+                            </svg>
+                        </div>
+                        <div class="h5 text-center">Хотите стать риэлтором?</div>
+                        <div class="testimonial__text">
+                            Watching the news the other day, it occurred to me that people who have “words to live by” often begin to attack and even
+                            kill others. I thought back to my own angry youth, when I could easily use words to justify violent…
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="text-center">
+                            <svg role="img" width="120" height="120" fill="#FE744E">
+                                <use xlink:href="/img/testimonials-sprite.svg#04"></use>
+                            </svg>
+                        </div>
+                        <div class="h5 text-center">Хотите стать риэлтором?</div>
+                        <div class="testimonial__text">
+                            Watching the news the other day, it occurred to me that people who have “words to live by” often begin to attack and even
+                            kill others. I thought back to my own angry youth, when I could easily use words to justify violent…
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hot-offers">
+        <div class="container">
+            <h3>Горячие объявления</h3>
+            <div class="slider" data-offers>
+                <a class="slider__item" href="javascript:void(0);">
+                    <%
+                        var offer = {
+                            img: "https://avatars.mds.yandex.net/get-realty/895985/add.1522672849855d0709586f7/app_snippet_large",
+                            title: "4-к кварира, 120 м²",
+                            price: "6 000 000"
+                        }
+                    %>
+                    <%= _.template(require('./../includes/offer-card.html'))(offer) %>
+                </a>
+                <a class="slider__item" href="javascript:void(0);">
+                    <%
+                        var offer = {
+                            img: "https://avatars.mds.yandex.net/get-realty/773594/add.1521719968521ccacb41e00/app_snippet_large",
+                            title: "3-к кварира, 120 м²",
+                            price: "16 000 000"
+                        }
+                    %>
+                    <%= _.template(require('./../includes/offer-card.html'))(offer) %>
+                </a>
+                <a class="slider__item" href="javascript:void(0);">
+                    <%
+                        var offer = {
+                            img: "https://avatars.mds.yandex.net/get-realty/993463/add.15239882149545f9c66a9ad/app_snippet_large",
+                            title: "12-к кварира, 2120 м²",
+                            price: "162 000 000"
+                        }
+                    %>
+                    <%= _.template(require('./../includes/offer-card.html'))(offer) %>
+                </a>
+                <a class="slider__item" href="javascript:void(0);">
+                    <%
+                        var offer = {
+                            img: "https://avatars.mds.yandex.net/get-realty/895985/add.1522672849855d0709586f7/app_snippet_large",
+                            title: "4-к кварира, 120 м²",
+                            price: "6 000 000"
+                        }
+                    %>
+                    <%= _.template(require('./../includes/offer-card.html'))(offer) %>
+                </a>
+                <a class="slider__item" href="javascript:void(0);">
+                    <%
+                        var offer = {
+                            img: "https://avatars.mds.yandex.net/get-realty/895985/add.1522672849855d0709586f7/app_snippet_large",
+                            title: "4-к кварира, 120 м²",
+                            price: "6 000 000"
+                        }
+                    %>
+                    <%= _.template(require('./../includes/offer-card.html'))(offer) %>
+                </a>
+                <a class="slider__item" href="javascript:void(0);">
+                    <%
+                        var offer = {
+                            img: "https://avatars.mds.yandex.net/get-realty/895985/add.1522672849855d0709586f7/app_snippet_large",
+                            title: "4-к кварира, 120 м²",
+                            price: "6 000 000"
+                        }
+                    %>
+                    <%= _.template(require('./../includes/offer-card.html'))(offer) %>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="news-list bg-dark text-white">
+        <div class="container">
+            <h2>Новости</h2>
+            <div class="row">
+                <a href="javascript:void(0);" class="news-list__item col-lg-3 display-block">
+                    <div class="news-list__pic">
+                        <img src="//realty.yandex.ru/T69ry9/263b7cgrfX/nLB/Vbce8M2/CfodmJuR8/CH/xXmcJAwK/molT/-HZbU_/vmQgGk1xS-/1XjdVB/C2/By0mIh/xpqffipc" alt="" />
+                    </div>
+                    <div class="news-list__text">Watching the news the other day, it occurred to me that people who have “words to live by” often begin to attack and even  kill others. I thought back to my own angry youth, when I could easily use words to justify violent…</div>
+                    <div class="news-list__date">27.10.2016</div>
+                </a>
+                <a href="javascript:void(0);" class="news-list__item col-lg-3 display-block">
+                    <div class="news-list__pic">
+                        <img src="//realty.yandex.ru/T69ry9/263b7cgrfX/nLB/Vbce8M2/CfodmJuR8/CH/xXmcJAwK/molT/-HZbU_/vmQgGk1xS-/1XjdVB/C2/By0mIh/xpqffipc"
+                            alt="" />
+                    </div>
+                    <div class="news-list__text">Watching the news the other day, it occurred to me that people who have “words to live by” often begin to attack and
+                        even kill others. I thought back to my own angry youth, when I could easily use words to justify violent…</div>
+                    <div class="news-list__date">27.10.2016</div>
+                </a>
+                <a href="javascript:void(0);" class="news-list__item col-lg-3 display-block">
+                    <div class="news-list__text">Watching the news the other day, it occurred to me that people who have “words to live by” often begin to attack and
+                        even kill others. I thought back to my own angry youth, when I could easily use words to justify violent…</div>
+                    <div class="news-list__date">27.10.2016</div>
+                </a>
+                <a href="javascript:void(0);" class="news-list__item col-lg-3 display-block">
+                    <div class="news-list__pic">
+                        <img src="//realty.yandex.ru/T69ry9/263b7cgrfX/nLB/Vbce8M2/CfodmJuR8/CH/xXmcJAwK/molT/-HZbU_/vmQgGk1xS-/1XjdVB/C2/By0mIh/xpqffipc"
+                            alt="" />
+                    </div>
+                    <div class="news-list__text">Watching the news the other day, it occurred to me that people who have “words to live by” often begin to attack and
+                        even kill others. I thought back to my own angry youth, when I could easily use words to justify violent…</div>
+                    <div class="news-list__date">27.10.2016</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="dynamics">
+        <div class="container">
+            <h2>Динамика цен по г. Уфа</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4>Продажа</h4>
+                    <div class="dynamics__item">
+                        <canvas id="dynamic-sell" class="graphics"></canvas>
+                        <div class="dynamics__info">
+                            <div class="dynamics__price">64 842 РУБ. за м²&nbsp;
+                                <strong class="text-success">+1.2%</strong>
+                            </div>
+                            <div><small>Средняя цена за апрель 2018</small></div>
+                            <div><br /></div>
+                            <div>Средняя цена</div>
+                            <div class="dynamics__list">
+                                <div class="dynamics__list-row">
+                                     <div class="dynamics__list-val">2 785 456 РУБ.</div>
+                                     <div class="dynamics__list-name">1-комнатная квартира</div>
+                                </div>
+                                <div class="dynamics__list-row">
+                                    <div class="dynamics__list-val">2 785 456 РУБ.</div>
+                                    <div class="dynamics__list-name">2-комнатная квартира</div>
+                                </div>
+                                <div class="dynamics__list-row">
+                                    <div class="dynamics__list-val">2 785 456 РУБ.</div>
+                                    <div class="dynamics__list-name">3-комнатная квартира</div>
+                                </div>
+                                <div class="dynamics__list-row">
+                                    <div class="dynamics__list-val">2 785 456 РУБ.</div>
+                                    <div class="dynamics__list-name">Студия</div>
+                                </div>
+                                <div class="dynamics__list-row">
+                                    <div class="dynamics__list-val">2 785 456 РУБ.</div>
+                                    <div class="dynamics__list-name">1-комнатная квартира евро</div>
+                                </div>
+                                <div class="dynamics__list-row">
+                                    <div class="dynamics__list-val">2 785 456 РУБ.</div>
+                                    <div class="dynamics__list-name">2-комнатная квартира евро двухуровневая</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h4>Аренда</h4>
+                    <div class="dynamics__item">
+                        <canvas id="dynamic-rent" class="graphics"></canvas>
+                        <div class="dynamics__info">
+                            <div class="dynamics__price">64 842 РУБ. за м²&nbsp;
+                                <strong class="text-success">+1.2%</strong>
+                            </div>
+                            <div>
+                                <small>Средняя цена за апрель 2018</small>
+                            </div>
+                            <div>
+                                <br />
+                            </div>
+                            <div>Средняя цена</div>
+                            <div class="dynamics__list">
+                                <div class="dynamics__list-row">
+                                    <div class="dynamics__list-val">2 785 456 РУБ.</div>
+                                    <div class="dynamics__list-name">1-комнатная квартира</div>
+                                </div>
+                                <div class="dynamics__list-row">
+                                    <div class="dynamics__list-val">2 785 456 РУБ.</div>
+                                    <div class="dynamics__list-name">2-комнатная квартира</div>
+                                </div>
+                                <div class="dynamics__list-row">
+                                    <div class="dynamics__list-val">2 785 456 РУБ.</div>
+                                    <div class="dynamics__list-name">3-комнатная квартира</div>
+                                </div>
+                                <div class="dynamics__list-row">
+                                    <div class="dynamics__list-val">2 785 456 РУБ.</div>
+                                    <div class="dynamics__list-name">Студия</div>
+                                </div>
+                                <div class="dynamics__list-row">
+                                    <div class="dynamics__list-val">2 785 456 РУБ.</div>
+                                    <div class="dynamics__list-name">1-комнатная квартира евро</div>
+                                </div>
+                                <div class="dynamics__list-row">
+                                    <div class="dynamics__list-val">2 785 456 РУБ.</div>
+                                    <div class="dynamics__list-name">2-комнатная квартира евро двухуровневая</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4>Цены на недвижимость по району</h4>
+            <p>Данные за февраль 2018. Цены на аренду и покупку недвижимости в г. Уфа значительно различаются в зависимости от района. Самые высокие арендные ставки на жилье в районе Ленинский, где съем квартиры обходится в среднем в 20 468 руб. за месяц. Дешевле всего наем жилья стоит в районе Калининский, где средняя месячная ставка равна 14 216 руб. По цене продажи вторичных квартир лидирует район Кировский: там средняя цена предложения составляет 74 335 руб. за кв. метр. Наиболее доступное жилье находится в районе Калининский, где кв. метр оценивается в среднем в 52 719 руб. </p>
+            <p>Более подробную информацию о средних ценах на продажу и аренду вы найдете, если кликните на название района в таблице ниже.</p>
+            <div class="row stats">
+                <div class="col-lg-6">
+                    <h5 class="text-primary">Продажа квартир (средняя цена за м²)</h5>
+                    <div class="stats-table sell-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Район</th>
+                                    <th>Цена за м²</th>
+                                    <th>Изм., г./г.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Дёмский
+                                    </td>
+                                    <td>58 702 РУБ.</td>
+                                    <td class="text-success">+6%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Калининский
+                                    </td>
+                                    <td>58 702 РУБ.</td>
+                                    <td class="text-success">+6%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Кировский
+                                    </td>
+                                    <td>58 702 РУБ.</td>
+                                    <td class="text-success">+6%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Ленинский
+                                    </td>
+                                    <td>58 702 РУБ.</td>
+                                    <td class="text-danger">-1%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Октябрьский
+                                    </td>
+                                    <td>58 702 РУБ.</td>
+                                    <td class="text-success">+6%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Орджоникидзевский
+                                    </td>
+                                    <td>582 702 РУБ.</td>
+                                    <td class="text-success">+6%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Советский
+                                    </td>
+                                    <td>58 702 РУБ.</td>
+                                    <td class="text-success">+6%</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h5 class="text-success">Аренда квартир (средняя цена за квартиру)</h5>
+                    <div class="stats-table rent-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Район</th>
+                                    <th>Цена за м²</th>
+                                    <th>Изм., г./г.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Дёмский
+                                    </td>
+                                    <td>58 702 РУБ.</td>
+                                    <td class="text-success">+6%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Калининский
+                                    </td>
+                                    <td>58 702 РУБ.</td>
+                                    <td class="text-success">+6%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Кировский
+                                    </td>
+                                    <td>58 702 РУБ.</td>
+                                    <td class="text-success">+6%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Ленинский
+                                    </td>
+                                    <td>58 702 РУБ.</td>
+                                    <td class="text-danger">-1%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Октябрьский
+                                    </td>
+                                    <td>58 702 РУБ.</td>
+                                    <td class="text-success">+6%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Орджоникидзевский
+                                    </td>
+                                    <td>582 702 РУБ.</td>
+                                    <td class="text-success">+6%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Советский
+                                    </td>
+                                    <td>58 702 РУБ.</td>
+                                    <td class="text-success">+6%</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review">
+        <div class="container">
+            <h2>Отзывы</h2>
+            <div class="col-lg-12">
+                <div class="slider" data-reviews>
+                    <%= _.template(require('./../includes/review.html'))() %>
+                    <%= _.template(require('./../includes/review.html'))() %>
+                    <%= _.template(require('./../includes/review.html'))() %>
+                    <%= _.template(require('./../includes/review.html'))() %>
+                    <%= _.template(require('./../includes/review.html'))() %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-primary footer-twin">
+<%
+var header = {
+    logo: 'logo-big-light.svg',
+    badge_class: 'badge-light text-dark'
+};
+%>
+    <%= _.template(require('./../includes/toolbar.html'))(header) %>
+    <%= _.template(require('./../includes/header.html'))(header) %>
+    <%= _.template(require('./../includes/navbar.html'))() %>
+</div>
+<%= _.template(require('./../includes/footer.html'))() %>
+<%= _.template(require('./../includes/modal.html'))() %>
+<script src="/js/vendors/jquery.min.js"></script>
+<script src="/js/vendors/popper.min.js"></script>
+<script src="/js/vendors/bootstrap.min.js"></script>
+<script src="/js/vendors/Chart.min.js"></script>
+<script src="/js/vendors/chartjs-plugin-crosshoverline.js"></script>
+<script src="/js/vendors/slick.min.js"></script>
+<script src="/js/vendors/bootstrap-multiselect.js"></script>
+<!--<script src="/js/utils.js"></script>-->
+<script src="/js/default.js"></script>
+<script src="/js/Index.js"></script>
+<script src="/js/Search.js"></script>
+<script src="/js/OfferSlider.js"></script>
+<script>
+    $(function () {
+        var data = {
+            months: ["05", "06", "07", "08", "09", "10", "11", "12"],
+            dynamic_sell: [
+                { x: 1522800000, y: 15133 }, { x: 1522890000, y: 16122 }, { x: 1523836800, y: 13200 }, { x: 1524528000, y: 13500 }, { x: 1524787200, y: 14123 }, { x: 1525132800, y: 15128 }, { x: 1525478400, y: 16789 }, { x: 1522800000, y: 15001 }
+            ],
+            dynamic_rent: [
+                { x: 1522800000, y: 15133 }, { x: 1522890000, y: 16122 }, { x: 1522800000, y: 13200 }, { x: 1524528000, y: 13500 }, { x: 1524787200, y: 14123 }, { x: 1525132800, y: 15128 }, { x: 1525478400, y: 16789 }, { x: 1522800000, y: 11001 }
+            ]
+        };
+
+        new Default().apply();
+        new Index(data).apply();
+        new Search().apply();
+        new OfferSlider().apply();
+    });
+</script>
+</body>
+</html>

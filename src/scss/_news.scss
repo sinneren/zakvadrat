@@ -1,0 +1,41 @@
+.news {
+    @include padding();
+    &-list {
+        @include clearfix;
+        margin-bottom: 50px;
+        margin-top: 25px;
+        @include padding();
+        padding-bottom: 30px;
+        &__item {
+            margin-top: 30px;
+            font-size: 12px;
+            color: $white;
+            &:hover {
+                text-decoration: none;
+                .news-list__text {
+                    color: $link-color;
+                }
+            }
+        }
+        &__pic {
+            margin-bottom: 12px;
+            img {
+                object-fit: cover;
+                max-width: 100%;
+            }
+        }
+        &__text {
+            line-height: 1.67;
+        }
+        &__date {
+            margin-top: 10px;
+        }
+    }
+    .news-list {
+        margin: 0;
+        padding: 0;
+        &__item {
+            color: $body-color;
+        }
+    }
+}

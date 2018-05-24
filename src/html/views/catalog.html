@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%
+var data = {
+    title: 'Каталог',
+};
+var header = {
+    logo: 'logo-big.svg',
+    badge_class: 'badge-primary text-light'
+};
+%>
+<%= _.template(require('./../includes/head.html'))(data) %>
+<body>
+<header class="header">
+    <%= _.template(require('./../includes/header-mobile.html'))() %>
+    <div class="collapse navbar-collapse d-md-block" id="navbarToggler">
+        <%= _.template(require('./../includes/toolbar.html'))(header) %>
+        <%= _.template(require('./../includes/header.html'))(header) %>
+        <%= _.template(require('./../includes/navbar.html'))() %>
+    </div>
+</header>
+<div class="wrapper">
+    <div class="catalog">
+        <%= _.template(require('./../includes/search.html'))() %>
+        <div class="container">
+            <div class="catalog-control justify-content-between">
+                <a href="javascript:void(0);" role="button" class="catalog-control__filter btn btn-success" data-toggle="modal" data-target="#modalFilter">Фильтр</a>
+                <a href="/map.html" role="button" class="catalog-control__map btn btn-secondary">Показать на карте</a>
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Сортировать
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sortMenuButton">
+                        <a class="dropdown-item" href="#">По цене</a>
+                        <a class="dropdown-item" href="#">По площади</a>
+                        <a class="dropdown-item" href="#">По комнатам</a>
+                    </div>
+                </div>
+            </div>
+            <%
+                var offer = {
+                    img: "https://avatars.mds.yandex.net/get-realty/895985/add.1522672849855d0709586f7/app_snippet_large",
+                    title: "4-к кварира, 120 м²",
+                    price: "6 000 000"
+                }
+            %>
+            <div class="row">
+                <div class="catalog__item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <%= _.template(require('./../includes/offer-card.html'))(offer) %>
+                </div>
+                <div class="catalog__item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <%= _.template(require('./../includes/offer-card.html'))(offer) %>
+                </div>
+                <div class="catalog__item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <%= _.template(require('./../includes/offer-card.html'))(offer) %>
+                </div>
+                <div class="catalog__item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <%= _.template(require('./../includes/offer-card.html'))(offer) %>
+                </div>
+                <div class="catalog__item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <%= _.template(require('./../includes/offer-card.html'))(offer) %>
+                </div>
+                <div class="catalog__item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <%= _.template(require('./../includes/offer-card.html'))(offer) %>
+                </div>
+                <div class="catalog__item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <%= _.template(require('./../includes/offer-card.html'))(offer) %>
+                </div>
+            </div>
+            <div class="list-control text-center">
+                <a href="javascript:void(0);" role="button" class="btn btn-lg btn-secondary">Показать еще 12</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-primary footer-twin">
+<%
+var header = {
+    logo: 'logo-big-light.svg',
+    badge_class: 'badge-light text-dark'
+};
+%>
+    <%= _.template(require('./../includes/toolbar.html'))(header) %>
+    <%= _.template(require('./../includes/header.html'))(header) %>
+    <%= _.template(require('./../includes/navbar.html'))() %>
+</div>
+<%= _.template(require('./../includes/footer.html'))() %>
+<%= _.template(require('./../includes/modal.html'))() %>
+<script src="/js/vendors/jquery.min.js"></script>
+<script src="/js/vendors/popper.min.js"></script>
+<script src="/js/vendors/bootstrap.min.js"></script>
+<script src="/js/vendors/bootstrap-multiselect.js"></script>
+<!--<script src="/js/utils.js"></script>-->
+<script src="/js/default.js"></script>
+<script src="/js/Search.js"></script>
+<script src="/js/Catalog.js"></script>
+<script>
+    $(function () {
+        new Default().apply();
+        new Search().apply();
+        new Catalog().apply();
+    });
+</script>
+</body>
+</html>

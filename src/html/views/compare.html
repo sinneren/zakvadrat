@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%
+var data = {
+    title: 'Сравнение',
+};
+var header = {
+    logo: 'logo-big.svg',
+    badge_class: 'badge-primary text-light'
+};
+%>
+<%= _.template(require('./../includes/head.html'))(data) %>
+<body class="fluid">
+<header class="header">
+    <%= _.template(require('./../includes/header-mobile.html'))() %>
+    <div class="collapse navbar-collapse d-md-block" id="navbarToggler">
+        <%= _.template(require('./../includes/toolbar.html'))(header) %>
+        <%= _.template(require('./../includes/header.html'))(header) %>
+        <%= _.template(require('./../includes/navbar.html'))() %>
+    </div>
+</header>
+<div class="wrapper">
+    <div class="compare">
+        <div class="compare__table-container">
+            <div class="compare__table-wrapper">
+                <table class="compare__table">
+                    <tbody class="compare__section compare__section-name">
+                        <tr class="compare__row compare__row-header compare__row-nothover">
+                            <td class="compare__cell compare__cell-name">
+                                <div class="compare__name-floater">
+                                    <h1>Сравнение</h1>
+                                </div>
+                            </td>
+                            <td class="compare__cell">
+                                <div class="compare__cell-photo">
+                                    <img src="/flat/komnata-sanktpeterburg-prospekt-energetikov-270014103-1.jpg" alt="" />
+                                    <a href="javascript:void(0);" class="compare__del" role="button">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </div>
+                                <a href="javascript:void(0);" class="compare__cell-title">1-комнатная квартира, 37, 5 м</a>
+                            </td>
+                            <!-- <td class="compare__cell">
+                                <div class="compare__cell-photo">
+                                    <img src="/flat/komnata-sanktpeterburg-prospekt-energetikov-270014103-1.jpg" alt="" />
+                                    <a href="javascript:void(0);" class="compare__del" role="button">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </div>
+                                <a href="javascript:void(0);" class="compare__cell-title">1-комнатная квартира, 37, 5 м</a>
+                            </td>
+                            <td class="compare__cell">
+                                <div class="compare__cell-photo">
+                                    <img src="/flat/komnata-sanktpeterburg-prospekt-energetikov-270014103-1.jpg" alt="" />
+                                    <a href="javascript:void(0);" class="compare__del" role="button">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </div>
+                                <a href="javascript:void(0);" class="compare__cell-title">студия, 37, 5 м</a>
+                            </td>
+                            <td class="compare__cell">
+                                <div class="compare__cell-photo">
+                                    <img src="/flat/komnata-sanktpeterburg-prospekt-energetikov-270014103-1.jpg" alt="" />
+                                    <a href="javascript:void(0);" class="compare__del" role="button">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </div>
+                                <a href="javascript:void(0);" class="compare__cell-title">студия, 37, 5 м</a>
+                            </td>
+                            <td class="compare__cell">
+                                <div class="compare__cell-photo">
+                                    <img src="/flat/komnata-sanktpeterburg-prospekt-energetikov-270014103-1.jpg" alt="" />
+                                    <a href="javascript:void(0);" class="compare__del" role="button">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </div>
+                                <a href="javascript:void(0);" class="compare__cell-title">студия, 37, 5 м</a>
+                            </td>
+                            <td class="compare__cell">
+                                <div class="compare__cell-photo">
+                                    <img src="/flat/komnata-sanktpeterburg-prospekt-energetikov-270014103-1.jpg" alt="" />
+                                    <a href="javascript:void(0);" class="compare__del" role="button">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </div>
+                                <a href="javascript:void(0);" class="compare__cell-title">студия, 37, 5 м</a>
+                            </td>
+                            <td class="compare__cell">
+                                <div class="compare__cell-photo">
+                                    <img src="/flat/komnata-sanktpeterburg-prospekt-energetikov-270014103-1.jpg" alt="" />
+                                    <a href="javascript:void(0);" class="compare__del" role="button">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </div>
+                                <a href="javascript:void(0);" class="compare__cell-title">студия, 37, 5 м</a>
+                            </td>
+                            <td class="compare__cell">
+                                <div class="compare__cell-photo">
+                                    <img src="/flat/komnata-sanktpeterburg-prospekt-energetikov-270014103-1.jpg" alt="" />
+                                    <a href="javascript:void(0);" class="compare__del" role="button">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </div>
+                                <a href="javascript:void(0);" class="compare__cell-title">студия, 37, 5 м</a>
+                            </td>
+                            <td class="compare__cell">
+                                <div class="compare__cell-photo">
+                                    <img src="/flat/komnata-sanktpeterburg-prospekt-energetikov-270014103-1.jpg" alt="" />
+                                    <a href="javascript:void(0);" class="compare__del" role="button">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </div>
+                                <a href="javascript:void(0);" class="compare__cell-title">студия, 37, 5 м</a>
+                            </td>
+                            <td class="compare__cell">
+                                <div class="compare__cell-photo">
+                                    <img src="/flat/komnata-sanktpeterburg-prospekt-energetikov-270014103-1.jpg" alt="" />
+                                    <a href="javascript:void(0);" class="compare__del" role="button">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </div>
+                                <a href="javascript:void(0);" class="compare__cell-title">1-комнатная квартира, 37, 5 м</a>
+                            </td>
+                            <td class="compare__cell">
+                                <a href="javascript:void(0);" class="compare__cell-title">1-комнатная квартира, 37, 5 м</a>
+                            </td>
+                            <td class="compare__cell">
+                                <div class="compare__cell-photo">
+                                    <img src="/flat/komnata-sanktpeterburg-prospekt-energetikov-270014103-1.jpg" alt="" />
+                                    <a href="javascript:void(0);" class="compare__del" role="button">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </div>
+                                <a href="javascript:void(0);" class="compare__cell-title">1-комнатная квартира, 37, 5 м</a>
+                            </td>
+                            <td class="compare__cell">
+                                <div class="compare__cell-photo">
+                                    <img src="/flat/komnata-sanktpeterburg-prospekt-energetikov-270014103-1.jpg" alt="" />
+                                    <a href="javascript:void(0);" class="compare__del" role="button">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </div>
+                                <a href="javascript:void(0);" class="compare__cell-title">студия, 37, 5 м</a>
+                            </td> -->
+                        </tr>
+                        <tr class="compare__row  compare__row-nothover compare__row-divider">
+                            <td class="compare__cell compare__cell-name">
+                                <div class="compare__name-floater">
+                                    <button class="btn btn-secondary">Очистить все</button>
+                                </div>
+                            </td>
+                            <td class="compare__cell">
+                                <button class="btn btn-outline-success" data-phone="999 845-23-22">+7 ... показать</button>
+                            </td>
+                            <!-- <td class="compare__cell">
+                                <button class="btn btn-outline-success" data-phone="999 845-23-22">+7 ... показать</button>
+                            </td>
+                            <td class="compare__cell">
+                                <button class="btn btn-outline-success" data-phone="999 845-23-22">+7 ... показать</button>
+                            </td>
+                            <td class="compare__cell">
+                                <button class="btn btn-outline-success" data-phone="999 845-23-22">+7 ... показать</button>
+                            </td>
+                            <td class="compare__cell">
+                                <button class="btn btn-outline-success" data-phone="999 845-23-22">+7 ... показать</button>
+                            </td>
+                            <td class="compare__cell">
+                                <button class="btn btn-outline-success" data-phone="999 845-23-22">+7 ... показать</button>
+                            </td>
+                            <td class="compare__cell">
+                                <button class="btn btn-outline-success" data-phone="999 845-23-22">+7 ... показать</button>
+                            </td>
+                            <td class="compare__cell">
+                                <button class="btn btn-outline-success" data-phone="999 845-23-22">+7 ... показать</button>
+                            </td>
+                            <td class="compare__cell">
+                                <button class="btn btn-outline-success" data-phone="999 845-23-22">+7 ... показать</button>
+                            </td>
+                            <td class="compare__cell">
+                                <button class="btn btn-outline-success" data-phone="999 845-23-22">+7 ... показать</button>
+                            </td>
+                            <td class="compare__cell">
+                                <button class="btn btn-outline-success" data-phone="999 845-23-22">+7 ... показать</button>
+                            </td>
+                            <td class="compare__cell">
+                                <button class="btn btn-outline-success" data-phone="999 845-23-22">+7 ... показать</button>
+                            </td>
+                            <td class="compare__cell">
+                                <button class="btn btn-outline-success" data-phone="999 845-23-22">+7 ... показать</button>
+                            </td> -->
+                        </tr>
+                        <tr class="compare__row">
+                            <td class="compare__cell compare__cell-name">
+                                <div class="compare__name-floater">
+                                    <strong>Стоимость</strong>
+                                </div>
+                            </td>
+                            <td class="compare__cell">12 456 456 руб.</td>
+                            <!-- <td class="compare__cell">1 456 456 руб.</td>
+                            <td class="compare__cell">1 456 456 руб.</td>
+                            <td class="compare__cell">256 456 руб.</td>
+                            <td class="compare__cell">56 456 руб.</td>
+                            <td class="compare__cell">1 456 456 руб.</td>
+                            <td class="compare__cell">1 456 456 руб.</td>
+                            <td class="compare__cell">1 456 456 руб.</td>
+                            <td class="compare__cell">1 456 456 руб.</td>
+                            <td class="compare__cell">1 456 456 руб.</td>
+                            <td class="compare__cell">1 456 456 руб.</td>
+                            <td class="compare__cell">1 456 456 руб.</td>
+                            <td class="compare__cell">1 456 456 руб.</td> -->
+                        </tr>
+                        <tr class="compare__row">
+                            <td class="compare__cell compare__cell-name">
+                                <div class="compare__name-floater">
+                                    <strong>Количество комнат</strong>
+                                </div>
+                            </td>
+                            <td class="compare__cell">1 </td>
+                            <!-- <td class="compare__cell">2</td>
+                            <td class="compare__cell">22</td>
+                            <td class="compare__cell">2</td>
+                            <td class="compare__cell">2</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">22</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td> -->
+                        </tr>
+                        <tr class="compare__row">
+                            <td class="compare__cell compare__cell-name">
+                                <div class="compare__name-floater">
+                                    <strong>Этаж</strong>
+                                </div>
+                            </td>
+                            <td class="compare__cell">1 </td>
+                            <!-- <td class="compare__cell">2</td>
+                            <td class="compare__cell">22</td>
+                            <td class="compare__cell">2</td>
+                            <td class="compare__cell">2</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">22</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td> -->
+                        </tr>
+                        <tr class="compare__row">
+                            <td class="compare__cell compare__cell-name">
+                                <div class="compare__name-floater">
+                                    <strong>Этажность</strong>
+                                </div>
+                            </td>
+                            <td class="compare__cell">1 </td>
+                            <!-- <td class="compare__cell">2</td>
+                            <td class="compare__cell">22</td>
+                            <td class="compare__cell">2</td>
+                            <td class="compare__cell">2</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">22</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td> -->
+                        </tr>
+                        <tr class="compare__row">
+                            <td class="compare__cell compare__cell-name">
+                                <div class="compare__name-floater">
+                                    <strong>Расстояние до метро</strong>
+                                </div>
+                            </td>
+                            <td class="compare__cell">1 </td>
+                            <!-- <td class="compare__cell">2</td>
+                            <td class="compare__cell">22</td>
+                            <td class="compare__cell">2</td>
+                            <td class="compare__cell">2</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">22</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td>
+                            <td class="compare__cell">1</td> -->
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="compare-placeholder">
+                    <div class="compare-placeholder__row">
+                        <div class="compare-placeholder__cell">
+                            <div class="compare-placeholder-img"></div>
+                            <div class="compare-placeholder-title"></div>
+                            <div class="compare-placeholder-btn"></div>
+                        </div>
+                        <div class="compare-placeholder__cell">
+                            <div class="compare-placeholder-img"></div>
+                            <div class="compare-placeholder-title"></div>
+                            <div class="compare-placeholder-btn"></div>
+                        </div>
+                    </div>
+                    <div class="compare-placeholder__sign">
+                        <img src="/img/ic-location-city.svg" width="96" height="96" alt="" class="d-block mb-1 ml-auto mr-auto" />
+                        Для сравнения необходимо не менее двух объектов недвижимости
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-primary footer-twin">
+<%
+var header = {
+    logo: 'logo-big-light.svg',
+    badge_class: 'badge-light text-dark'
+};
+%>
+    <%= _.template(require('./../includes/toolbar.html'))(header) %>
+    <%= _.template(require('./../includes/header.html'))(header) %>
+    <%= _.template(require('./../includes/navbar.html'))() %>
+</div>
+<%= _.template(require('./../includes/footer.html'))() %>
+<%= _.template(require('./../includes/modal.html'))() %>
+<script src="/js/vendors/jquery.min.js"></script>
+<script src="/js/vendors/popper.min.js"></script>
+<script src="/js/vendors/bootstrap.min.js"></script>
+<script src="/js/vendors/bootstrap-multiselect.js"></script>
+<!--<script src="/js/utils.js"></script>-->
+<script src="/js/default.js"></script>
+<script src="/js/Agents.js"></script>
+<script>
+    $(function () {
+        new Default().apply();
+        new Agents().apply();
+    });
+</script>
+</body>
+</html>

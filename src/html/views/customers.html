@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%
+var data = {
+    title: 'Собственникам',
+};
+var header = {
+    logo: 'logo-big.svg',
+    badge_class: 'badge-primary text-light'
+};
+%>
+<%= _.template(require('./../includes/head.html'))(data) %>
+<body>
+<header class="header">
+    <%= _.template(require('./../includes/header-mobile.html'))() %>
+    <div class="collapse navbar-collapse d-md-block" id="navbarToggler">
+        <%= _.template(require('./../includes/toolbar.html'))(header) %>
+        <%= _.template(require('./../includes/header.html'))(header) %>
+        <%= _.template(require('./../includes/navbar.html'))() %>
+    </div>
+</header>
+<div class="wrapper">
+    <div class="customers">
+        <div class="container">
+            <h1>Собственникам</h1>
+            <p>Для того, чтобы сэкономить Ваше время, оптимизировать затраты, мы поможем выгодно продать либо сдать в аренду Вашу недвижимость. Заполните пожалуйста поля формы и специалисты нашей компании обязательно свяжуться с Вами.</p>
+            <form class="customers-form">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label class="d-block align-middle">Как к вам обращаться?<span class="float-right text-primary">●</span></label>
+                            <input type="text" class="form-control" placeholder="Введите ваше имя" />
+                        </div>
+                        <div class="form-group">
+                            <label class="d-block">Телефон для связи с вами<span class="float-right text-primary">●</span></label>
+                            <input type="phone" class="form-control" placeholder="+7 000 000-00-00" />
+                        </div>
+                        <div class="form-group">
+                            <label class="d-block">Тип недвижимости</label>
+                            <select class="form-control" >
+                                <option selected>Квартиры</option>
+                                <option>Комнаты</option>
+                                <option>Дома</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="d-block">Площадь<span class="float-right text-primary">●</span></label>
+                            <input type="number" class="form-control" placeholder="0" />
+                        </div>
+                        <div class="form-group">
+                            <label class="d-block">Дополнительная информация</label>
+                            <textarea rows="5" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group-captcha d-inline-block">
+                                <label class="d-block">Введите символы с картинки<span class="float-right text-primary">●</span></label>
+                                <input type="text" class="form-control" placeholder="0" />
+                            </div>
+                            <img src="#" width="160" height="30" alt="6775" class="d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label class="d-block">Фотографии/планировки</label>
+                            <ul class="files-list">
+                                <li><i class="fa fa-file-word-o"></i>&nbsp;screen_plane_apartment0099023.doc</li>
+                                <li><i class="fa fa-file-o"></i>&nbsp;screen_plane_apartment0099023.doc</li>
+                                <li><i class="fa fa-file-picture-o"></i>&nbsp;screen_plane_apartment0099023.doc</li>
+                                <li><i class="fa fa-file-archive-o"></i>&nbsp;screen_plane_apartment0099023.doc</li>
+                            </ul>
+                            <div class="form-control-file">
+                                <button class="btn btn-light">Выбрать файлы</button>
+                                <input type="file"  />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="bg-primary footer-twin">
+<%
+var header = {
+    logo: 'logo-big-light.svg',
+    badge_class: 'badge-light text-dark'
+};
+%>
+    <%= _.template(require('./../includes/toolbar.html'))(header) %>
+    <%= _.template(require('./../includes/header.html'))(header) %>
+    <%= _.template(require('./../includes/navbar.html'))() %>
+</div>
+<%= _.template(require('./../includes/footer.html'))() %>
+<%= _.template(require('./../includes/modal.html'))() %>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="/js/vendors/jquery.min.js"></script>
+<script src="/js/vendors/popper.min.js"></script>
+<script src="/js/vendors/bootstrap.min.js"></script>
+<script src="/js/vendors/jquery.fancybox.min.js"></script>
+<!--<script src="/js/utils.js"></script>-->
+<script src="/js/default.js"></script>
+<script>
+    $(function () {
+        new Default().apply();
+    });
+</script>
+</body>
+</html>

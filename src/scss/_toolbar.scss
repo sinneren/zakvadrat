@@ -1,0 +1,43 @@
+.toolbar {
+    background-color: rgba($gray-900, 0.05);
+    .nav {
+        @include media-breakpoint-down(xs) {
+            display: block;
+            text-align: center;
+        }
+    }
+    .nav-link,
+    .nav-item {
+        font-size: 14px;
+        line-height: 1.71;
+    }
+    .nav-link {
+        color: $text-muted;
+    }
+    .nav-item {
+        &:last-child {
+            .nav-link {
+                padding-right: 0;
+            }
+        }
+        &:first-child {
+            .nav-link {
+                padding-left: 0;
+            }
+        }
+        @include media-breakpoint-down(xs) {
+            .nav-link {
+                padding-left: 0;
+                padding-right: 0;
+                color: $white;
+                .badge-primary {
+                    background-color: $white;
+                    color: $body-color !important;
+                }
+            }
+        }
+    }
+    .dropdown-menu {
+        margin-top: 0;
+    }
+}

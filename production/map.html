@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.bundle.css">
+    <title>Карта</title>
+</head>
+<body class="fluid map-body">
+<header class="header">
+    <div class="header-mobile d-md-none">
+    <a href="#" class="header__logo-mobile">
+        <img src="/img/logo-mobile.svg" alt="" />
+    </a>
+    <button class="navbar-toggler header-mobile__toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <div class="fa fa-bars"></div>
+    </button>
+</div>
+    <div class="collapse navbar-collapse d-md-block" id="navbarToggler">
+        <div class="toolbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item dropdown mr-auto">
+                        <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-toggle="dropdown">Москва</a>
+                        <div class="dropdown-menu">
+                            <a href="javascript:void(0);" class="dropdown-item active">Москва</a>
+                            <a href="javascript:void(0);" class="dropdown-item">Санкт-Петербург</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" class="nav-link">В сравнении&nbsp;
+                            <span class="badge badge-pill badge-primary text-light">4</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" class="nav-link">Оставить заявку</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" class="nav-link" data-toggle="modal" data-target="#modalCallback">Обратный звонок</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="header__panel">
+    <div class="container">
+        <a href="/" class="header__logo">
+            <img src=/img/logo-big.svg alt="" />
+        </a>
+        <div class="ml-auto mr-auto input-group header__search">
+            <input type="text" placeholder="ID, улица, ключевое слово, имя или телефон агента" class="form-control" />
+            <div class="input-group-append">
+                <button class="btn btn-outline-input" type="button"><i class="fa fa-search text-primary"></i></button>
+            </div>
+        </div>
+        <div class="ml-auto header__phone">+7 (495) 246-28-25</div>
+    </div>
+</div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-menu">
+    <div class="container">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);">Недвижимость&nbsp;<i class="fa fa-caret-down"></i></a>
+                        <ul class="nav nav-inner navbar-dark bg-dark">
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);">Новостройки&nbsp;
+                                <i class="fa fa-caret-right"></i></a>
+                                <ul class="nav nav-inner navbar-dark bg-dark">
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);" class="nav-link">ЖК Приволье</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);" class="nav-link">ЖК Краски лета</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);">Вторичка&nbsp;
+                                <i class="fa fa-caret-right"></i></a>
+                                <ul class="nav nav-inner navbar-dark bg-dark">
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);" class="nav-link">1-комнатные</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);" class="nav-link">2-комнатные</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);">Комнаты</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);">Агентства</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);">Агенты&nbsp;<span class="badge badge-pill text-dark">785</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);">О проекте</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);">Рекламодателям</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    </div>
+</header>
+<div class="wrapper">
+    <div class="map">
+        <div id="map-container" class="map-container"></div>
+        <div class="map-control">
+            <div class="container">
+                <a href="/catalog.html" role="button" class="btn btn-secondary">Списком</a>
+            </div>
+        </div>
+        <div class="map-mobile-control">
+            <div class="container">
+                <a href="javascript:void(0);" class="text-success" data-toggle="modal" data-target="#modalFilter">Настроить</a>
+                <a href="/catalog.html" class="float-right text-white"><i class="fa fa-close"></i></a>
+            </div>
+        </div>
+        <div class="map-filter">
+            <form class="search" id="search">
+    <div class="container">
+        <div class="search-info">
+            <div class="search-info__title">3440 объектов в г. Уфа на сайте.</div>
+            <div class="search-info__count">
+                <small>База обновлена: 13.04.2018 в 13:00</small>
+            </div>
+        </div>
+        <div class="search-row">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="row">
+                        <div class="search-col col-lg-12 col-md-12 col-sm-6">
+                            <select class="form-control">
+                                <option selected value="0">Квартира</option>
+                                <option value="1">Комната</option>
+                                <option value="2">Дом</option>
+                                <option value="3">Дача</option>
+                            </select>
+                        </div>
+                        <div class="search-col col-lg-12 col-md-12 col-sm-6">
+                            <select class="form-control" placeholder="Района">
+                                <option value="0">Центр</option>
+                                <option value="1">Советский</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="row">
+                        <div class="search-col col-lg-12 col-md-12 col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Цена</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="от" />
+                                <input type="text" class="form-control" placeholder="до" />
+                                <div class="input-group-append">
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownCurrency" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            ₽
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownCurrency">
+                                            <a class="dropdown-item" href="#">₽</a>
+                                            <a class="dropdown-item" href="#">$</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-col col-lg-12 col-md-12 col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Площадь</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="от" />
+                                <input type="text" class="form-control" placeholder="до" />
+                                <div class="input-group-append">
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownSquare" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            м²
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSquare">
+                                            <a class="dropdown-item" href="#">м²</a>
+                                            <a class="dropdown-item" href="#">фут²</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-row <!--d-none-->">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="search-col col-lg-12">
+                            <select class="form-control">
+                                <option selected value="0">Продажа</option>
+                                <option value="1">Покупка</option>
+                                <option value="2">Аренда</option>
+                            </select>
+                        </div>
+                        <div class="search-col col-lg-12">
+                            <select class="form-control" placeholder="Вид объекта">
+                                <option value="0">Новостройка</option>
+                                <option value="1">Вторичка</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="search-col col-lg-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Комнат</span>
+                                </div>
+                                <select class="custom-select" multiple="multiple">
+                                    <option selected value="Студия">Студия</option>
+                                    <option value="1">1-комнатная</option>
+                                    <option value="2">2-комнатная</option>
+                                    <option value="3">3-комнатная</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="search-col col-lg-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Тип</span>
+                                </div>
+                                <select class="custom-select" multiple="multiple">
+                                    <option selected value="0">Кирпичный</option>
+                                    <option value="1">Панельный</option>
+                                    <option value="2">Монолит</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="search-col col-lg-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Этаж</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="от" />
+                                <input type="text" class="form-control" placeholder="до" />
+                            </div>
+                        </div>
+                        <div class="search-col col-lg-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Этажность</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="от" />
+                                <input type="text" class="form-control" placeholder="до" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-control row justify-content-between">
+            <div class="col search-col">
+                <div class="search-control__checkbox-group">
+                    <div class="custom-checkbox">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox-input" />
+                            <svg role="img" width="16" height="16" class="checkbox-icon checkbox-unchecked">
+                                <use xlink:href="/img/ui-sprite.svg#checkbox-false"></use>
+                            </svg>
+                            <svg role="img" width="16" height="16" class="checkbox-icon checkbox-checked">
+                                <use xlink:href="/img/ui-sprite.svg#checkbox-true"></use>
+                            </svg>
+                            <span class="checkbox-label-single">
+                                вторичка
+                            </span>
+                        </label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox-input" />
+                            <svg role="img" width="16" height="16" class="checkbox-icon checkbox-unchecked">
+                                <use xlink:href="/img/ui-sprite.svg#checkbox-false"></use>
+                            </svg>
+                            <svg role="img" width="16" height="16" class="checkbox-icon checkbox-checked">
+                                <use xlink:href="/img/ui-sprite.svg#checkbox-true"></use>
+                            </svg>
+                            <span class="checkbox-label-single">
+                                искать только в названиях
+                            </span>
+                        </label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox-input" />
+                            <svg role="img" width="16" height="16" class="checkbox-icon checkbox-unchecked">
+                                <use xlink:href="/img/ui-sprite.svg#checkbox-false"></use>
+                            </svg>
+                            <svg role="img" width="16" height="16" class="checkbox-icon checkbox-checked">
+                                <use xlink:href="/img/ui-sprite.svg#checkbox-true"></use>
+                            </svg>
+                            <span class="checkbox-label-single">
+                                только с фото
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col search-col text-right">
+                <button type="button" class="search-submit btn btn-success btn-lg">Показать 33 333 варианта</button>
+            </div>
+        </div>
+    </div>
+</form>
+        </div>
+    </div>
+</div>
+<div class="bg-primary footer-twin">
+
+    <div class="toolbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item dropdown mr-auto">
+                        <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-toggle="dropdown">Москва</a>
+                        <div class="dropdown-menu">
+                            <a href="javascript:void(0);" class="dropdown-item active">Москва</a>
+                            <a href="javascript:void(0);" class="dropdown-item">Санкт-Петербург</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" class="nav-link">В сравнении&nbsp;
+                            <span class="badge badge-pill badge-light text-dark">4</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" class="nav-link">Оставить заявку</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" class="nav-link" data-toggle="modal" data-target="#modalCallback">Обратный звонок</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="header__panel">
+    <div class="container">
+        <a href="/" class="header__logo">
+            <img src=/img/logo-big-light.svg alt="" />
+        </a>
+        <div class="ml-auto mr-auto input-group header__search">
+            <input type="text" placeholder="ID, улица, ключевое слово, имя или телефон агента" class="form-control" />
+            <div class="input-group-append">
+                <button class="btn btn-outline-input" type="button"><i class="fa fa-search text-primary"></i></button>
+            </div>
+        </div>
+        <div class="ml-auto header__phone">+7 (495) 246-28-25</div>
+    </div>
+</div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-menu">
+    <div class="container">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);">Недвижимость&nbsp;<i class="fa fa-caret-down"></i></a>
+                        <ul class="nav nav-inner navbar-dark bg-dark">
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);">Новостройки&nbsp;
+                                <i class="fa fa-caret-right"></i></a>
+                                <ul class="nav nav-inner navbar-dark bg-dark">
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);" class="nav-link">ЖК Приволье</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);" class="nav-link">ЖК Краски лета</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);">Вторичка&nbsp;
+                                <i class="fa fa-caret-right"></i></a>
+                                <ul class="nav nav-inner navbar-dark bg-dark">
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);" class="nav-link">1-комнатные</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);" class="nav-link">2-комнатные</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);">Комнаты</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);">Агентства</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);">Агенты&nbsp;<span class="badge badge-pill text-dark">785</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);">О проекте</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);">Рекламодателям</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row footer-links">
+            <div class="col col-lg-4 col-md-6">
+                <h6><a href="javascript:void(0);" class="footer-menu__link">Коммерческая</a></h6>
+                <ul class="footer-menu">
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Офисное помещение Продажа</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Офисное помещение Аренда</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Торговое помещение Продажа</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Торговое помещение Аренда</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">ПСН Продажа</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">ПСН Аренда</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Складское помещение Продажа</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Складское помещение Аренда</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Производственное помещение Продажа</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Производственное помещение Аренда</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Гостиница Продажа</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col col-lg-2 col-md-6">
+                <h6><a href="javascript:void(0);" class="footer-menu__link">Новостройки</a></h6>
+                <ul class="footer-menu">
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Дема (2)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Загородные (6)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Затон (3)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Зеленая роща (6)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Инорс (1)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Проспект (8)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Сипайлово(1)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Центр(6)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Черниковка (4)</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col col-lg-2 col-md-6">
+                <h6><a href="javascript:void(0);" class="footer-menu__link">Вторичная</a></h6>
+                <ul class="footer-menu">
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Студии</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">1-комнатная квартира</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">2-комнатная квартира</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">3-комнатная квартира</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col col-lg-4 col-md-6">
+                <h6><a href="javascript:void(0);" class="footer-menu__link">Дома, дачи, коттеджи</a></h6>
+                <ul class="footer-menu">
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Уфа (2)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Булгаково (6)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Зубово (3)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Чесноковка (6)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Жилино (1)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Федоровка (8)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Баланово (1)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">Николаевка (6)</a>
+                    </li>
+                    <li class="footer-menu__item">
+                        <a href="javascript:void(0);" class="footer-menu__link">показать все поселки</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col">
+                <h6>
+                    <a href="javascript:void(0);" class="footer-menu__link">Комнаты</a>
+                </h6>
+                <h6>
+                    <a href="javascript:void(0);" class="footer-menu__link">Земельные участки</a>
+                </h6>
+                <h6>
+                    <a href="javascript:void(0);" class="footer-menu__link">Гаражи и машиноместа</a>
+                </h6>
+            </div>
+        </div>
+        <hr class="hr">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="social">
+                    <a href="javascript:void(0);" class="social__item">
+                        <svg role="img" width="40" height="40" fill="#FFF">
+                            <use xlink:href="/img/social-icons-sprite.svg#vk"></use>
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0);" class="social__item">
+                        <svg role="img" width="40" height="40" fill="#FFF">
+                            <use xlink:href="/img/social-icons-sprite.svg#fb"></use>
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0);" class="social__item">
+                        <svg role="img" width="40" height="40" fill="#FFF">
+                            <use xlink:href="/img/social-icons-sprite.svg#gp"></use>
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0);" class="social__item">
+                        <svg role="img" width="40" height="40" fill="#FFF">
+                            <use xlink:href="/img/social-icons-sprite.svg#tw"></use>
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0);" class="social__item">
+                        <svg role="img" width="40" height="40" fill="#FFF">
+                            <use xlink:href="/img/social-icons-sprite.svg#ig"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="copyright">
+                    <p>Настоящий сайт и представленные на нем материалы носят информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 ГК РФ. <br /> &copy; Разработано в Site-Mechanics</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modalCallback" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Заказать обратный звонок</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputName">Как к вам обращаться?</label>
+                        <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Введите ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPhone">Телефон для связи с вами</label>
+                        <input type="tel" class="form-control" id="exampleInputPhone" aria-describedby="emailHelp" placeholder="+7 000 000-00-00">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail">Электронная почта</label>
+                        <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="например alex@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Текст сообщения</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5">
+                             “The most beautiful experience we can have is the mysterious. It is the fundamental emotion that stands at the cradle of
+                            true art and true science.” Albert Einstein, The World as I See It, 1931 The debate between realism and anti-realism is,
+                            at least, a century old.
+                        </textarea>
+                    </div>
+                    <small class="form-text">Нажимая кнопку «Отправить», я подтверждаю свое согласие с <a href="javascript:void(0);">Политикой конфиденциальности</a></small>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary">Отмена</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="modalFilter" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Настроить фильтр</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="search-container" class="row"></div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-success">Показать</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="/js/vendors/jquery.min.js"></script>
+<script src="/js/vendors/popper.min.js"></script>
+<script src="/js/vendors/bootstrap.min.js"></script>
+<script src="/js/vendors/bootstrap-multiselect.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/default.js"></script>
+<script src="/js/Search.js"></script>
+<script src="/js/Map.js"></script>
+<script>
+    $(function () {
+        new Default().apply();
+        new Search().apply();
+        new Map({
+            selector: 'map-container',
+            coords: [55.814621, 37.586840],
+            zoom: 12,
+            objectsUrl: 'http://perspektivaufa.tmweb.ru/test/for-demo/cords.php?bounds=',
+            detailsUrl: 'http://perspektivaufa.tmweb.ru/test/for-demo/data.php?id=',
+            container: '.map',
+        }).apply();
+    });
+</script>
+</body>
+</html>

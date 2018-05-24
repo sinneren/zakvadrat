@@ -1,0 +1,77 @@
+.header {
+    &__panel {
+        padding-bottom: 16px;
+        background-color: $white;
+        .container {
+            display: flex;
+        }
+        @include media-breakpoint-down(xs) {
+            background-color: $primary;
+            text-align: center;
+            .container {
+                flex-direction: column;
+            }
+        }
+    }
+    &__logo {
+        display: block;
+        margin-top: 10px;
+        margin-right: auto;
+        @include media-breakpoint-down(xs) {
+            display: none;
+        }
+        &-mobile {
+            float: left;
+            max-width: 158px;
+        }
+    }
+    &__phone {
+        margin-top: 24px;
+        font-size: 24px;
+        text-align: right;
+        opacity: 0.9;
+        @include media-breakpoint-down(xs) {
+            margin-right: auto;
+            order: 1;
+            text-align: center;
+        }
+    }
+    &__search {
+        margin-top: 20px;
+        max-width: 390px;
+        max-height: 38px;
+        .form-control {
+            font-size: 0.82rem;
+            &::placeholder,
+            &:-ms-input-placeholder,
+            &::-moz-placeholder,
+            &::-webkit-input-placeholder {
+                font-size: 0.8rem;
+                line-height: 1.43;
+            }
+        }
+        @include media-breakpoint-down(xs) {
+            order: 2;
+        }
+        @include media-breakpoint-down(md) {
+            max-width: 240px;
+        }
+    }
+    &-mobile {
+        @include clearfix;
+        display: flex;
+        align-items: center;
+        padding: 10px 16px;
+        background-color: $primary;
+        &__toggler {
+            margin-left: auto;
+            color: $white;
+        }
+    }
+    .navbar-collapse {
+        background-color: $primary;
+        @include media-breakpoint-up(md) {
+            background-color: $white;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.catalog {
+    @include padding();
+    @include media-breakpoint-down(xs) {
+        .search {
+            display: none;
+        }
+    }
+    .catalog-control {
+        padding-bottom: 35px;
+        @include clearfix;
+        @include media-breakpoint-down(xs) {
+            padding-bottom: 15px;
+        }
+        &__map {
+            float: left;
+            @include media-breakpoint-down(xs) {
+                float: right;
+            }
+        }
+        &__filter {
+            display: none;
+            @include media-breakpoint-down(xs) {
+                display: inline-block;
+            }
+        }
+        .dropdown {
+            float: right;
+            @include media-breakpoint-down(xs) {
+                width: 100%;
+                margin-top: 15px;
+                clear: both;
+                &-toggle {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .catalog__item {
+        margin-bottom: 30px;
+    }
+}

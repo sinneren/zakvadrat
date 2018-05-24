@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%
+var data = {
+    title: 'Страница',
+};
+var header = {
+    logo: 'logo-big.svg',
+    badge_class: 'badge-primary text-light'
+};
+%>
+<%= _.template(require('./../includes/head.html'))(data) %>
+<body>
+<header class="header">
+    <%= _.template(require('./../includes/header-mobile.html'))() %>
+    <div class="collapse navbar-collapse d-md-block" id="navbarToggler">
+        <%= _.template(require('./../includes/toolbar.html'))(header) %>
+        <%= _.template(require('./../includes/header.html'))(header) %>
+        <%= _.template(require('./../includes/navbar.html'))() %>
+    </div>
+</header>
+<div class="wrapper">
+    <div class="page">
+        <div class="container">
+            <h1>Новости</h1>
+            <div class="pb-5">
+                <p><small>Уфа, улица Ухтомского, 22</small></p>
+            </div>
+            <div class="pb-5">
+                <h2>7 Ways To Advertise Your Business For Free</h2>
+                <p>Spend some quality time with the room you are going to put your new home theater audio system. Believe it or not but the room is as much a component in your home theater system as any of the electronics you will ever buy. Ask yourself which room you will be putting your new system in. Consider whether or not this room is going to be used solely for you system or will it be used for other activities. Will there be any size considerations for the components and speakers you plan on using with the dimensions of the room?
+    Consider drawing a map of your room and sketch the possible placements of your furniture, components and speakers. Measure the room’s dimensions and write them down. Make a list of all the inputs you currently have and will continue to use. Make a list of the inputs you intend to add to your new audio system. You should write down which components are going to need cables and wires. Also, write down the approximate lengths of those cables and wires. Once all of this is worked out carry this information and map with you when you go out to buy your new audio system.</p>
+            </div>
+            <div class="property__photos pb-5">
+                <div class="property__photos-viewport">
+                    <a href="//avatars.mds.yandex.net/get-realty/192914/add.1504716353515a1f9c2740b/cosmic" class="property__photos-link" data-fancybox-loop="true" data-fancybox="images">
+                        <img class="property__photos-image" src="//avatars.mds.yandex.net/get-realty/192914/add.1504716353515a1f9c2740b/cosmic" alt=""
+                        />
+                    </a>
+                    <a href="//avatars.mds.yandex.net/get-realty/192914/add.1504716353515a1f9c2740b/cosmic" class="property__photos-link" data-fancybox-loop="true" data-fancybox="images">
+                        <img class="property__photos-image" src="//avatars.mds.yandex.net/get-realty/192914/add.1504716353515a1f9c2740b/cosmic" data-fancybox-loop="true" alt=""
+                        />
+                    </a>
+                    <a href="//avatars.mds.yandex.net/get-realty/192914/add.1504716353515a1f9c2740b/cosmic" class="property__photos-link" data-fancybox-loop="true" data-fancybox="images">
+                        <img class="property__photos-image" src="//avatars.mds.yandex.net/get-realty/192914/add.1504716353515a1f9c2740b/cosmic" alt=""
+                        />
+                    </a>
+                    <a href="//avatars.mds.yandex.net/get-realty/192914/add.1504716353515a1f9c2740b/cosmic" class="property__photos-link" data-fancybox-loop="true" data-fancybox="images">
+                        <img class="property__photos-image" src="//avatars.mds.yandex.net/get-realty/192914/add.1504716353515a1f9c2740b/cosmic" alt=""
+                        />
+                    </a>
+                </div>
+            </div>
+            <div class="pb-5">
+               <h2>7 Ways To Advertise Your Business For Free</h2>
+                <p>Spend some quality time with the room you are going to put your new home theater audio system. Believe it or not but the room is as much a component in your home theater system as any of the electronics you will ever buy. Ask yourself which room you will be putting your new system in. Consider whether or not this room is going to be used solely for you system or will it be used for other activities. Will there be any size considerations for the components and speakers you plan on using with the dimensions of the room?
+    Consider drawing a map of your room and sketch the possible placements of your furniture, components and speakers. Measure the room’s dimensions and write them down. Make a list of all the inputs you currently have and will continue to use. Make a list of the inputs you intend to add to your new audio system. You should write down which components are going to need cables and wires. Also, write down the approximate lengths of those cables and wires. Once all of this is worked out carry this information and map with you when you go out to buy your new audio system.</p>
+            </div>
+            <div class="row pb-5">
+                <div class="col-lg-10 ml-auto mr-auto">
+                    <blockquote class="blockquote text-center mb-5">
+                        <p class="mb-0">Many people has the notion that enlightenment is one state. Many also believe that when it is attained, a person is forever
+                        in that state.</p>
+                        <footer class="blockquote-footer">Margaret McDonald</footer>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="pb-5">
+                <h2>7 Ways To Advertise Your Business For Free</h2>
+                <p>Spend some quality time with the room you are going to put your new home theater audio system. Believe it or not but the room is as much a component in your home theater system as any of the electronics you will ever buy. Ask yourself which room you will be putting your new system in. Consider whether or not this room is going to be used solely for you system or will it be used for other activities. Will there be any size considerations for the components and speakers you plan on using with the dimensions of the room?
+    Consider drawing a map of your room and sketch the possible placements of your furniture, components and speakers. Measure the room’s dimensions and write them down. Make a list of all the inputs you currently have and will continue to use. Make a list of the inputs you intend to add to your new audio system. You should write down which components are going to need cables and wires. Also, write down the approximate lengths of those cables and wires. Once all of this is worked out carry this information and map with you when you go out to buy your new audio system.</p>
+            </div>
+            <div class="pb-5">
+                <div class="slider full" data-slider>
+                    <img alt="" src="http://kenwheeler.github.io/slick/img/fonz3.png" class="slider__item-img" />
+                    <img alt="" src="http://kenwheeler.github.io/slick/img/fonz2.png" class="slider__item-img" />
+                    <img alt="" src="http://kenwheeler.github.io/slick/img/fonz1.png" class="slider__item-img" />
+                </div>
+            </div>
+            <div class="pb-5">
+                <h2>7 Ways To Advertise Your Business For Free</h2>
+                <p>Spend some quality time with the room you are going to put your new home theater audio system. Believe it or not but the room is as much a component in your home theater system as any of the electronics you will ever buy. Ask yourself which room you will be putting your new system in. Consider whether or not this room is going to be used solely for you system or will it be used for other activities. Will there be any size considerations for the components and speakers you plan on using with the dimensions of the room?
+Consider drawing a map of your room and sketch the possible placements of your furniture, components and speakers. Measure the room’s dimensions and write them down. Make a list of all the inputs you currently have and will continue to use. Make a list of the inputs you intend to add to your new audio system. You should write down which components are going to need cables and wires. Also, write down the approximate lengths of those cables and wires. Once all of this is worked out carry this information and map with you when you go out to buy your new audio system.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-primary footer-twin">
+<%
+var header = {
+    logo: 'logo-big-light.svg',
+    badge_class: 'badge-light text-dark'
+};
+%>
+    <%= _.template(require('./../includes/toolbar.html'))(header) %>
+    <%= _.template(require('./../includes/header.html'))(header) %>
+    <%= _.template(require('./../includes/navbar.html'))() %>
+</div>
+<%= _.template(require('./../includes/footer.html'))() %>
+<%= _.template(require('./../includes/modal.html'))() %>
+<script src="/js/vendors/jquery.min.js"></script>
+<script src="/js/vendors/popper.min.js"></script>
+<script src="/js/vendors/bootstrap.min.js"></script>
+<script src="/js/vendors/bootstrap-multiselect.js"></script>
+<script src="/js/vendors/jquery.fancybox.min.js"></script>
+<script src="/js/vendors/slick.min.js"></script>
+<!--<script src="/js/utils.js"></script>-->
+<script src="/js/default.js"></script>
+<script src="/js/Slider.js"></script>
+<script>
+    $(function () {
+        new Default().apply();
+        new Slider().apply();
+    });
+</script>
+</body>
+</html>

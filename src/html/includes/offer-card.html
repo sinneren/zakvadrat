@@ -1,0 +1,42 @@
+<div class="offer-card">
+    <div class="offer-card__pic">
+        <img src="<%=img%>" alt="">
+        <div class="offer-card__badges">
+            <span class="badge bg-success badge-pill text-white">Эксклюзив</span>
+            <span class="badge bg-primary badge-pill text-white">Горячее предложение</span>
+        </div>
+    </div>
+    <div class="offer-card__info">
+        <div class="offer-card__title"><%=title%></div>
+        <div class="offer-card__price text-primary"><%=price%> руб.</div>
+        <div class="offer-card__pirce-meter text-secondary">
+            <small>50 980 руб./м²</small>
+        </div>
+        <dl class="offer-card__list">
+            <dd>
+                Сипайлово
+            </dd>
+            <dd>
+                Ул. Гагарина, 50
+            </dd>
+            <dd>
+                8 этаж из 9
+            </dd>
+        </dl>
+    </div>
+    <div class="offer-card__compare">
+        <div class="custom-checkbox checkbox-diff-label">
+            <label class="checkbox-label">
+                <input type="checkbox" class="checkbox-input" />
+                <svg role="img" width="16" height="16" class="checkbox-icon checkbox-unchecked">
+                    <use xlink:href="/img/ui-sprite.svg#checkbox-false"></use>
+                </svg>
+                <svg role="img" width="16" height="16" class="checkbox-icon checkbox-checked">
+                    <use xlink:href="/img/ui-sprite.svg#checkbox-true"></use>
+                </svg>
+                <span class="checkbox-label-unchecked">Сравнить</span>
+                <span class="checkbox-label-checked">Убрать из сравнения</span>
+            </label>
+        </div>
+    </div>
+</div>

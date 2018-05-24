@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%
+var data = {
+    title: 'Карта',
+};
+var header = {
+    logo: 'logo-big.svg',
+    badge_class: 'badge-primary text-light'
+};
+%>
+<%= _.template(require('./../includes/head.html'))(data) %>
+<body class="fluid map-body">
+<header class="header">
+    <%= _.template(require('./../includes/header-mobile.html'))() %>
+    <div class="collapse navbar-collapse d-md-block" id="navbarToggler">
+        <%= _.template(require('./../includes/toolbar.html'))(header) %>
+        <%= _.template(require('./../includes/header.html'))(header) %>
+        <%= _.template(require('./../includes/navbar.html'))() %>
+    </div>
+</header>
+<div class="wrapper">
+    <div class="map">
+        <div id="map-container" class="map-container"></div>
+        <div class="map-control">
+            <div class="container">
+                <a href="/catalog.html" role="button" class="btn btn-secondary">Списком</a>
+            </div>
+        </div>
+        <div class="map-mobile-control">
+            <div class="container">
+                <a href="javascript:void(0);" class="text-success" data-toggle="modal" data-target="#modalFilter">Настроить</a>
+                <a href="/catalog.html" class="float-right text-white"><i class="fa fa-close"></i></a>
+            </div>
+        </div>
+        <div class="map-filter">
+            <%= _.template(require('./../includes/search.html'))() %>
+        </div>
+    </div>
+</div>
+<div class="bg-primary footer-twin">
+<%
+var header = {
+    logo: 'logo-big-light.svg',
+    badge_class: 'badge-light text-dark'
+};
+%>
+    <%= _.template(require('./../includes/toolbar.html'))(header) %>
+    <%= _.template(require('./../includes/header.html'))(header) %>
+    <%= _.template(require('./../includes/navbar.html'))() %>
+</div>
+<%= _.template(require('./../includes/footer.html'))() %>
+<%= _.template(require('./../includes/modal.html'))() %>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="/js/vendors/jquery.min.js"></script>
+<script src="/js/vendors/popper.min.js"></script>
+<script src="/js/vendors/bootstrap.min.js"></script>
+<script src="/js/vendors/bootstrap-multiselect.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/default.js"></script>
+<script src="/js/Search.js"></script>
+<script src="/js/Map.js"></script>
+<script>
+    $(function () {
+        new Default().apply();
+        new Search().apply();
+        new Map({
+            selector: 'map-container',
+            coords: [55.814621, 37.586840],
+            zoom: 12,
+            objectsUrl: 'http://perspektivaufa.tmweb.ru/test/for-demo/cords.php?bounds=',
+            detailsUrl: 'http://perspektivaufa.tmweb.ru/test/for-demo/data.php?id=',
+            container: '.map',
+        }).apply();
+    });
+</script>
+</body>
+</html>

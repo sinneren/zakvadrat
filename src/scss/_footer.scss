@@ -1,0 +1,59 @@
+.footer {
+    padding-top: 33px;
+    padding-bottom: 65px;
+    background-color: $dark;
+    font-size: 12px;
+    line-height: 1.67;
+    color: $white;
+    @include media-breakpoint-down(xs) {
+        padding-bottom: 40px;
+        .hr {
+            display: none;
+        }
+    }
+    @include media-breakpoint-down(md) {
+        padding-bottom: 40px;
+    }
+    &-menu {
+        margin: 0 0 17px 0;
+        padding: 0;
+        @include media-breakpoint-down(md) {
+            margin-bottom: 30px;
+        }
+        &__item {
+            list-style-type: none;
+            font-size: 12px;
+            line-height: 2.5;
+        }
+        &__link {
+            color: $white;
+        }
+    }
+    &-links {
+        @include media-breakpoint-down(xs) {
+            display: none;
+        }
+    }
+    .copyright {
+        font-family: Helvetica Neue, sans-serif;
+    }
+    &-twin {
+        .header__panel {
+            background-color: transparent;
+        }
+        .toolbar {
+            .nav-link {
+                color: $white;
+            }
+        }
+        @include media-breakpoint-down(xs) {
+            .navbar {
+                text-align: center;
+                &-nav {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%
+var data = {
+    title: '404',
+};
+var header = {
+    logo: 'logo-big.svg',
+    badge_class: 'badge-primary text-light'
+};
+%>
+<%= _.template(require('./../includes/head.html'))(data) %>
+<body>
+<header class="header">
+    <%= _.template(require('./../includes/header-mobile.html'))() %>
+    <div class="collapse navbar-collapse d-md-block" id="navbarToggler">
+        <%= _.template(require('./../includes/toolbar.html'))(header) %>
+            <%= _.template(require('./../includes/header.html'))(header) %>
+                <%= _.template(require('./../includes/navbar.html'))() %>
+    </div>
+</header>
+<div class="wrapper">
+    <div class="not-found">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="display-1 text-primary">404</h1>
+                <h2>страница не найдена</h2>
+                <p>Запрошенной страницы не существует. Перейти на главную страницу.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-primary footer-twin">
+    <%
+        var header = {
+            logo: 'logo-big-light.svg',
+            badge_class: 'badge-light text-dark'
+        };
+    %>
+    <%= _.template(require('./../includes/toolbar.html'))(header) %>
+    <%= _.template(require('./../includes/header.html'))(header) %>
+    <%= _.template(require('./../includes/navbar.html'))() %>
+</div>
+<%= _.template(require('./../includes/footer.html'))() %>
+<%= _.template(require('./../includes/modal.html'))() %>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="/js/vendors/jquery.min.js"></script>
+<script src="/js/vendors/popper.min.js"></script>
+<script src="/js/vendors/bootstrap.min.js"></script>
+<script src="/js/vendors/jquery.fancybox.min.js"></script>
+<!--<script src="/js/utils.js"></script>-->
+<script src="/js/default.js"></script>
+<script>
+    $(function () {
+        new Default().apply();
+    });
+</script>
+</body>
+</html>

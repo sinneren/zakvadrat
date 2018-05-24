@@ -1,0 +1,6 @@
+.customers {
+    @include padding();
+    &-form {
+        padding-top: 15px;
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%
+var data = {
+    title: 'Агенты',
+};
+var header = {
+    logo: 'logo-big.svg',
+    badge_class: 'badge-primary text-light'
+};
+%>
+<%= _.template(require('./../includes/head.html'))(data) %>
+<body>
+<header class="header">
+    <%= _.template(require('./../includes/header-mobile.html'))() %>
+    <div class="collapse navbar-collapse d-md-block" id="navbarToggler">
+        <%= _.template(require('./../includes/toolbar.html'))(header) %>
+        <%= _.template(require('./../includes/header.html'))(header) %>
+        <%= _.template(require('./../includes/navbar.html'))() %>
+    </div>
+</header>
+<div class="wrapper">
+    <div class="agents">
+        <div class="container">
+            <h1>Агенты</h1>
+            <div class="agents-list">
+                <div class="row">
+                    <%= _.template(require('./../includes/agent-item.html'))() %>
+                    <%= _.template(require('./../includes/agent-item.html'))() %>
+                    <%= _.template(require('./../includes/agent-item.html'))() %>
+                    <%= _.template(require('./../includes/agent-item.html'))() %>
+                    <%= _.template(require('./../includes/agent-item.html'))() %>
+                    <%= _.template(require('./../includes/agent-item.html'))() %>
+                    <%= _.template(require('./../includes/agent-item.html'))() %>
+                </div>
+                <div class="list-control text-center">
+                    <a href="javascript:void(0);" role="button" class="btn btn-lg btn-secondary">Показать еще 12</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-primary footer-twin">
+<%
+var header = {
+    logo: 'logo-big-light.svg',
+    badge_class: 'badge-light text-dark'
+};
+%>
+    <%= _.template(require('./../includes/toolbar.html'))(header) %>
+    <%= _.template(require('./../includes/header.html'))(header) %>
+    <%= _.template(require('./../includes/navbar.html'))() %>
+</div>
+<%= _.template(require('./../includes/footer.html'))() %>
+<%= _.template(require('./../includes/modal.html'))() %>
+<script src="/js/vendors/jquery.min.js"></script>
+<script src="/js/vendors/popper.min.js"></script>
+<script src="/js/vendors/bootstrap.min.js"></script>
+<script src="/js/vendors/bootstrap-multiselect.js"></script>
+<!--<script src="/js/utils.js"></script>-->
+<script src="/js/default.js"></script>
+<script src="/js/Agents.js"></script>
+<script>
+    $(function () {
+        new Default().apply();
+        new Agents().apply();
+    });
+</script>
+</body>
+</html>
