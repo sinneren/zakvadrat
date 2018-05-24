@@ -14,7 +14,7 @@
   },
   "keywords": [],
   "author": "Serj Laskin",
-  "license": "Apache License Version 2.0",
+  "license": "Apache-2.0",
   "devDependencies": {
     "autoprefixer": "^8.1.0",
     "babel-core": "^6.26.0",
