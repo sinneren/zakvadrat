@@ -1,8 +1,10 @@
 .offer-card {
-    height: 100%;
+    width: 100%;
     background-color: $white;
     box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.03);
     border: solid 1px #eeeeee;
+    position: relative;
+    padding-bottom: 60px;
     &__pic {
         display: block;
         position: relative;
@@ -15,9 +17,6 @@
     }
     &__info {
         padding: 20px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
     &__title {
         margin-bottom: 12px;
@@ -35,6 +34,12 @@
         line-height: 1.67;
     }
     &__compare {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        max-height: 60px;
         padding: 18px 20px 17px;
         border-top: 1px solid #EEE;
     }

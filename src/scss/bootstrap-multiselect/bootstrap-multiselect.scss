@@ -58,7 +58,12 @@ span.multiselect-native-select{
     &:after {
       position: absolute;
       top: 50%;
-      right: .475rem;
+      bottom: .1rem;
+      right: .415rem;
+      margin-top: -0.1rem;
+      border-top: 0.4em solid;
+      border-right: 0.17em solid transparent;
+      border-left: 0.17em solid transparent;
     }
   }
   .multiselect-selected-text {

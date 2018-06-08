@@ -27,10 +27,32 @@
                 <ul class="nav justify-content-end">
                     <li class="nav-item dropdown mr-auto">
                         <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-toggle="dropdown">Москва</a>
-                        <div class="dropdown-menu">
-                            <a href="javascript:void(0);" class="dropdown-item active">Москва</a>
-                            <a href="javascript:void(0);" class="dropdown-item">Санкт-Петербург</a>
-                        </div>
+                        <ul class="dropdown-menu dropdown-search-box" role="menu">
+                            <li role="presentation" class="search-box">
+                                <input type="text" class="form-control" placeholder="Введите город..." value="" name="search" autocomplete="off"/>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item active">Москва</a></li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Санкт-Петербург</a></li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Уфа</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Омск</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Пермь</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Октябрьский</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Казань</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Туймазы</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Белебей</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Самара</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Сызрань</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Хвалынск</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="javascript:void(0);" class="nav-link">В сравнении&nbsp;
@@ -130,139 +152,154 @@
         </div>
         <div class="search-row">
             <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="row">
-                        <div class="search-col col-lg-12 col-md-12 col-sm-6">
-                            <select class="form-control">
-                                <option selected value="0">Квартира</option>
-                                <option value="1">Комната</option>
-                                <option value="2">Дом</option>
-                                <option value="3">Дача</option>
-                            </select>
-                        </div>
-                        <div class="search-col col-lg-12 col-md-12 col-sm-6">
-                            <select class="form-control" placeholder="Района">
-                                <option value="0">Центр</option>
-                                <option value="1">Советский</option>
-                            </select>
-                        </div>
-                    </div>
+                
+                <div class="search-col col-lg-3 col-md-3 col-sm-12">
+                    <select class="form-control" data-control="type_deal">
+                        <option disabled>Тип сделки</option>
+                        <option value="0" data-trigger="sell" selected>Продажа</option>
+                        <option value="1" data-trigger="rent">Аренда</option>
+                        <option value="2" data-trigger="exc">Обмен</option>
+                    </select>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="row">
-                        <div class="search-col col-lg-12 col-md-12 col-sm-12">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Цена</span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="от" />
-                                <input type="text" class="form-control" placeholder="до" />
-                                <div class="input-group-append">
-                                    <div class="dropdown">
-                                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownCurrency" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            ₽
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownCurrency">
-                                            <a class="dropdown-item" href="#">₽</a>
-                                            <a class="dropdown-item" href="#">$</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                
+                <div class="search-col col-lg-3 col-md-3 col-sm-12">
+                    <select class="form-control" data-control="type_realty" placeholder="Тип недвижимости">
+                        <option disabled>Тип недвижимости</option>
+                        <option value="0" data-trigger="apartment" selected>Квартиры</option>
+                        <option value="1" data-trigger="room">Комнаты</option>
+                        <option value="2" data-trigger="house">Дома, дачи, коттеджи</option>
+                        <option value="3" data-trigger="land">Земельный участок</option>
+                        <option value="4" data-trigger="garage">Гаражи и машиноместа</option>
+                        <option value="5" data-trigger="commerce">Коммерческая недвижимость</option>
+                    </select>
+                </div>
+                
+                <div class="search-col col-lg-6 col-md-6 col-sm-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">&nbsp;₽&nbsp;</span>
                         </div>
-                        <div class="search-col col-lg-12 col-md-12 col-sm-12">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Площадь</span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="от" />
-                                <input type="text" class="form-control" placeholder="до" />
-                                <div class="input-group-append">
-                                    <div class="dropdown">
-                                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownSquare" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            м²
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSquare">
-                                            <a class="dropdown-item" href="#">м²</a>
-                                            <a class="dropdown-item" href="#">фут²</a>
-                                        </div>
-                                    </div>
+                        <input type="text" class="form-control" placeholder="от" />
+                        <input type="text" class="form-control" placeholder="до" />
+                        <div class="input-group-append">
+                            <div class="dropdown">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    за всё
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownPrice">
+                                    <a class="dropdown-item" href="#">за всё</a>
+                                    <a class="dropdown-item" href="#">за метр</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="search-row <!--d-none-->">
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="row">
-                        <div class="search-col col-lg-12">
-                            <select class="form-control">
-                                <option selected value="0">Продажа</option>
-                                <option value="1">Покупка</option>
-                                <option value="2">Аренда</option>
-                            </select>
-                        </div>
-                        <div class="search-col col-lg-12">
+                        
+                        <div class="search-col col-lg-6 col-md-6 col-sm-12" data-container="type_object">
                             <select class="form-control" placeholder="Вид объекта">
+                                <option selected disabled>Вид объекта</option>
                                 <option value="0">Новостройка</option>
                                 <option value="1">Вторичка</option>
                             </select>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="row">
-                        <div class="search-col col-lg-12">
+                        
+                        <div class="search-col col-lg-6 col-md-6 col-sm-12" data-container="type_rent">
+                            <select class="form-control" placeholder="Срок аренды">
+                                <option selected disabled>Срок аренды</option>
+                                <option value="0">Длительно</option>
+                                <option value="1">Посуточно</option>
+                            </select>
+                        </div>
+                        
+                        <div class="search-col col-lg-6 col-md-6 col-sm-12" data-container="type_land">
+                            <select class="form-control" placeholder="Категория земель">
+                                <option selected disabled>Категория земель</option>
+                                <option value="0">Земля</option>
+                                <option value="1">Марс</option>
+                            </select>
+                        </div>
+                        
+                        <div class="search-col col-lg-6 col-md-6 col-sm-12" data-container="rooms">
                             <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Комнат</span>
-                                </div>
-                                <select class="custom-select" multiple="multiple">
-                                    <option selected value="Студия">Студия</option>
+                                <select class="custom-select" multiple="multiple" placeholder="Комнат">
+                                    <option value="Студия">Студия</option>
                                     <option value="1">1-комнатная</option>
                                     <option value="2">2-комнатная</option>
                                     <option value="3">3-комнатная</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="search-col col-lg-12">
+                        
+                        <div class="search-col col-lg-6 col-md-6 col-sm-12" data-container="city_distance">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Тип</span>
+                                    <span class="input-group-text">До города, км</span>
                                 </div>
-                                <select class="custom-select" multiple="multiple">
-                                    <option selected value="0">Кирпичный</option>
+                                <input type="text" class="form-control" placeholder="км" />
+                            </div>
+                        </div>
+                        
+                        <div class="search-col col-lg-6 col-md-6 col-sm-12" data-container="security">
+                            <select class="form-control" placeholder="Охрана">
+                                <option disabled>Охрана</option>
+                                <option value="0">Есть</option>
+                                <option value="1" selected>Нет</option>
+                            </select>
+                        </div>
+                        
+                        <div class="search-col col-lg-6 col-md-6 col-sm-12" data-container="type_building">
+                            <div class="input-group">
+                                <select class="custom-select" multiple="multiple" placeholder="Тип дома">
+                                    <option value="0">Кирпичный</option>
                                     <option value="1">Панельный</option>
                                     <option value="2">Монолит</option>
                                 </select>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="row">
-                        <div class="search-col col-lg-12">
+                        
+                        <div class="search-col col-lg-6 col-md-6 col-sm-12" data-container="floors">
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Этаж</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="этаж" />
+                                <input type="text" class="form-control" placeholder="всего" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="row">
+                        
+                        <div class="search-col col-lg-12 col-md-12 col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" data-label="square">м²</span>
                                 </div>
                                 <input type="text" class="form-control" placeholder="от" />
                                 <input type="text" class="form-control" placeholder="до" />
                             </div>
                         </div>
-                        <div class="search-col col-lg-12">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Этажность</span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="от" />
-                                <input type="text" class="form-control" placeholder="до" />
-                            </div>
+                        
+                        <div class="search-col col-lg-6 col-md-6 col-sm-12">
+                            <select class="form-control" placeholder="Город">
+                                <option selected disabled>Город</option>
+                                <option value="0">Мурино</option>
+                                <option value="1">Кавголово</option>
+                                <option value="3">Кудрово</option>
+                            </select>
+                        </div>
+                        
+                        <div class="search-col col-lg-6 col-md-6 col-sm-12">
+                            <select class="form-control" placeholder="Район">
+                                <option selected disabled>Район</option>
+                                <option value="0">Центр</option>
+                                <option value="1">Советский</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -271,34 +308,6 @@
         <div class="search-control row justify-content-between">
             <div class="col search-col">
                 <div class="search-control__checkbox-group">
-                    <div class="custom-checkbox">
-                        <label class="checkbox-label">
-                            <input type="checkbox" class="checkbox-input" />
-                            <svg role="img" width="16" height="16" class="checkbox-icon checkbox-unchecked">
-                                <use xlink:href="/img/ui-sprite.svg#checkbox-false"></use>
-                            </svg>
-                            <svg role="img" width="16" height="16" class="checkbox-icon checkbox-checked">
-                                <use xlink:href="/img/ui-sprite.svg#checkbox-true"></use>
-                            </svg>
-                            <span class="checkbox-label-single">
-                                вторичка
-                            </span>
-                        </label>
-                    </div>
-                    <div class="custom-checkbox">
-                        <label class="checkbox-label">
-                            <input type="checkbox" class="checkbox-input" />
-                            <svg role="img" width="16" height="16" class="checkbox-icon checkbox-unchecked">
-                                <use xlink:href="/img/ui-sprite.svg#checkbox-false"></use>
-                            </svg>
-                            <svg role="img" width="16" height="16" class="checkbox-icon checkbox-checked">
-                                <use xlink:href="/img/ui-sprite.svg#checkbox-true"></use>
-                            </svg>
-                            <span class="checkbox-label-single">
-                                искать только в названиях
-                            </span>
-                        </label>
-                    </div>
                     <div class="custom-checkbox">
                         <label class="checkbox-label">
                             <input type="checkbox" class="checkbox-input" />
@@ -662,10 +671,32 @@
                 <ul class="nav justify-content-end">
                     <li class="nav-item dropdown mr-auto">
                         <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-toggle="dropdown">Москва</a>
-                        <div class="dropdown-menu">
-                            <a href="javascript:void(0);" class="dropdown-item active">Москва</a>
-                            <a href="javascript:void(0);" class="dropdown-item">Санкт-Петербург</a>
-                        </div>
+                        <ul class="dropdown-menu dropdown-search-box" role="menu">
+                            <li role="presentation" class="search-box">
+                                <input type="text" class="form-control" placeholder="Введите город..." value="" name="search" autocomplete="off"/>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item active">Москва</a></li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Санкт-Петербург</a></li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Уфа</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Омск</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Пермь</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Октябрьский</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Казань</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Туймазы</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Белебей</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Самара</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Сызрань</a>
+                            </li>
+                            <li role="presentation" class="result"><a href="javascript:void(0);" class="dropdown-item">Хвалынск</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="javascript:void(0);" class="nav-link">В сравнении&nbsp;
@@ -990,7 +1021,6 @@
 <script src="/js/vendors/popper.min.js"></script>
 <script src="/js/vendors/bootstrap.min.js"></script>
 <script src="/js/vendors/bootstrap-multiselect.js"></script>
-<!--<script src="/js/utils.js"></script>-->
 <script src="/js/default.js"></script>
 <script src="/js/Search.js"></script>
 <script src="/js/Catalog.js"></script>

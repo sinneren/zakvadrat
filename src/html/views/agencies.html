@@ -2,7 +2,7 @@
 <html lang="ru">
 <%
 var data = {
-    title: 'Агенты',
+    title: 'Агентства',
 };
 var header = {
     logo: 'logo-big.svg',
@@ -20,22 +20,22 @@ var header = {
     </div>
 </header>
 <div class="wrapper">
-    <div class="agents">
+    <div class="agency">
         <div class="container">
-            <h1>Агенты</h1>
-            <div class="agents-list">
-                <div class="row">
-                    <%= _.template(require('./../includes/agent-item.html'))() %>
-                    <%= _.template(require('./../includes/agent-item.html'))() %>
-                    <%= _.template(require('./../includes/agent-item.html'))() %>
-                    <%= _.template(require('./../includes/agent-item.html'))() %>
-                    <%= _.template(require('./../includes/agent-item.html'))() %>
-                    <%= _.template(require('./../includes/agent-item.html'))() %>
-                    <%= _.template(require('./../includes/agent-item.html'))() %>
-                </div>
-                <div class="list-control text-center">
-                    <a href="javascript:void(0);" role="button" class="btn btn-lg btn-secondary">Показать еще 12</a>
-                </div>
+            <h1><%= data.title %></h1>
+            <h3 class="pt-3">Казань</h3>
+            <div class="row">
+                <%= _.template(require('./../includes/agency-item.html'))() %>
+                <%= _.template(require('./../includes/agency-item.html'))() %>
+                <%= _.template(require('./../includes/agency-item.html'))() %>
+                <%= _.template(require('./../includes/agency-item.html'))() %>
+                <%= _.template(require('./../includes/agency-item.html'))() %>
+                <%= _.template(require('./../includes/agency-item.html'))() %>
+                <%= _.template(require('./../includes/agency-item.html'))() %>
+            </div>
+            <h3 class="pt-3">Москва</h3>
+            <div class="row">
+                <%= _.template(require('./../includes/agency-item.html'))() %>
             </div>
         </div>
     </div>
@@ -56,12 +56,11 @@ var header = {
 <script src="/js/vendors/jquery.min.js"></script>
 <script src="/js/vendors/popper.min.js"></script>
 <script src="/js/vendors/bootstrap.min.js"></script>
+<script src="/js/vendors/jquery.fancybox.min.js"></script>
 <script src="/js/default.js"></script>
-<script src="/js/Agents.js"></script>
 <script>
     $(function () {
         new Default().apply();
-        new Agents().apply();
     });
 </script>
 </body>
